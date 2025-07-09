@@ -14,19 +14,39 @@ export const PipView: React.FC = () => {
     transcribedQuestion,
     isListening,
     setIsInPipMode,
+    setTranscribedQuestion,
   } = useAppStore();
 
   const handleExitPipMode = () => {
     setIsInPipMode(false);
   };
 
+  // Test questions for demonstration
+  const testQuestions = [
+    "Tell me about your experience with React Native?",
+    "What's your greatest strength as a developer?",
+    "How do you handle challenging technical problems?",
+    "Why are you interested in this position?",
+    "Describe a recent project you're proud of?",
+  ];
+
+  const handleTestQuestion = () => {
+    const randomQuestion = testQuestions[Math.floor(Math.random() * testQuestions.length)];
+    setTranscribedQuestion(randomQuestion);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Ghost Writer</Text>
-        <TouchableOpacity onPress={handleExitPipMode} style={styles.exitButton}>
-          <Text style={styles.exitButtonText}>×</Text>
-        </TouchableOpacity>
+        <View style={styles.headerButtons}>
+          <TouchableOpacity onPress={handleTestQuestion} style={styles.testButton}>
+            <Text style={styles.testButtonText}>Test</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handleExitPipMode} style={styles.exitButton}>
+            <Text style={styles.exitButtonText}>×</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <ScrollView style={styles.content} contentContainerStyle={styles.contentContainer}>
@@ -54,7 +74,7 @@ export const PipView: React.FC = () => {
             <Text style={styles.placeholderText}>
               {isListening 
                 ? 'Waiting for questions...' 
-                : 'Start listening to see AI-generated answers here'
+                : 'Tap "Test" button to simulate a question'
               }
             </Text>
           </View>
@@ -85,6 +105,22 @@ const styles = StyleSheet.create({
   headerText: {
     color: '#fff',
     fontSize: 14,
+    fontWeight: '600',
+  },
+  headerButtons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  testButton: {
+    backgroundColor: '#4CAF50',
+    borderRadius: 8,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    marginRight: 8,
+  },
+  testButtonText: {
+    color: '#fff',
+    fontSize: 12,
     fontWeight: '600',
   },
   exitButton: {

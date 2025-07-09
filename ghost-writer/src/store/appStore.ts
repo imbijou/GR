@@ -10,7 +10,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
   transcribedQuestion: '',
   aiAnswer: '',
   isInPipMode: false,
-  deepgramApiKey: 'YOUR_DEEPGRAM_API_KEY', // Replace with your actual key
+  deepgramApiKey: '5ddad3b35a30c7b7f6cd7585a038ddbcb08fa795', // Your Deepgram API key
 
   // Actions
   setResume: (resume: string) => set({ resume }),

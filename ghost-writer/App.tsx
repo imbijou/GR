@@ -1,20 +1,27 @@
+import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useAppStore } from './src/store/appStore';
+import { SetupScreen } from './src/components/SetupScreen';
+import { PipView } from './src/components/PipView';
+import { useInterviewMode } from './src/hooks/useInterviewMode';
 
 export default function App() {
+  const { isInPipMode, apiKey, deepgramApiKey } = useAppStore();
+  const { startListening, stopListening } = useInterviewMode();
+
+  // Start listening when entering PiP mode
+  useEffect(() => {
+    if (isInPipMode && apiKey && deepgramApiKey) {
+      startListening();
+    } else if (!isInPipMode) {
+      stopListening();
+    }
+  }, [isInPipMode, apiKey, deepgramApiKey, startListening, stopListening]);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar style={isInPipMode ? "light" : "auto"} />
+      {isInPipMode ? <PipView /> : <SetupScreen />}
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
