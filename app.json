@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "Ghost Writer",
+    "slug": "ghost-writer",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ghostwriter.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "This app needs microphone access to listen to interview questions and provide AI-generated answers.",
+        "NSCameraUsageDescription": "This app may need camera access for video calls.",
+        "UISupportsPictureInPictureMediaPlayback": true
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.ghostwriter.app",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.INTERNET",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow Ghost Writer to access your microphone to listen for interview questions."
+        }
+      ]
+    ]
+  }
+}
