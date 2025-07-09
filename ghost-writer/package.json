@@ -1,0 +1,30 @@
+{
+  "name": "ghost-writer",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "expo": "~53.0.17",
+    "expo-av": "^15.1.7",
+    "expo-permissions": "^14.4.0",
+    "expo-status-bar": "~2.2.3",
+    "react": "19.0.0",
+    "react-native": "0.79.5",
+    "react-native-dotenv": "^3.4.11",
+    "react-native-live-audio-stream": "^1.1.1",
+    "react-native-pip-android": "^1.0.1",
+    "zustand": "^5.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@types/react": "~19.0.10",
+    "typescript": "~5.8.3"
+  },
+  "private": true
+}
