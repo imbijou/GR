@@ -51,7 +51,6 @@ Before running the app, you'll need:
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd ghost-writer
    ```
 
 2. **Install dependencies**
@@ -67,13 +66,13 @@ Before running the app, you'll need:
 4. **Run the application**
    ```bash
    # For iOS
-   npm run ios
+   npx expo start --ios
    
    # For Android
-   npm run android
+   npx expo start --android
    
    # For web (development)
-   npm run web
+   npx expo start --web
    ```
 
 ## Usage

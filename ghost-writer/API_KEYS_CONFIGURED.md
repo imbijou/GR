@@ -18,7 +18,7 @@ Your API keys have been successfully integrated into the Ghost Writer applicatio
 
 1. **Start the app**:
    ```bash
-   npm start
+   npm run start
    ```
 
 2. **Press `w` for web version** (recommended for testing)
@@ -72,6 +72,7 @@ Your Ghost Writer app is now:
 - **Production-prepared** architecture
 
 Simply run `npm start` and press `w` to begin testing your AI-powered interview assistant!
+Simply run `npm run start` and press `w` to begin testing your AI-powered interview assistant!
 
 ---
 

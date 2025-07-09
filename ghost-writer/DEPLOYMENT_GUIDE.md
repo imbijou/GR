@@ -14,7 +14,6 @@ Your Ghost Writer app is now fully configured and ready for deployment across mu
 
 ### Deploy Commands
 ```bash
-cd ghost-writer
 npm run build
 ```
 
@@ -78,7 +77,6 @@ EXPO_PUBLIC_DEEPGRAM_API_KEY=5ddad3b35a30c7b7f6cd7585a038ddbcb08fa795
 
 ### 1. Web Deployment (Immediate)
 ```bash
-cd ghost-writer
 npm install
 npm run build
 # Upload 'dist' folder to any static hosting service
@@ -86,14 +84,12 @@ npm run build
 
 ### 2. Expo Go Testing (Immediate)
 ```bash
-cd ghost-writer
-npm start
+npm run start
 # Scan QR code with Expo Go app
 ```
 
 ### 3. Production Mobile Build
 ```bash
-cd ghost-writer
 npm install -g eas-cli
 eas build:configure
 eas build --platform all

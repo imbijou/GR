@@ -6,8 +6,7 @@ Your Ghost Writer app is configured and ready to use with your API keys!
 
 ### 1. Start the Development Server
 ```bash
-cd ghost-writer
-npm start
+npm run start
 ```
 
 ### 2. Choose Your Platform
